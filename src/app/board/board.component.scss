@@ -1,0 +1,29 @@
+
+.board {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+app-square {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    mat-toolbar-row {
+        display: flex;
+    justify-content: space-evenly;
+    }
+    margin-bottom: 3%;
+}
+
+@media screen and (max-width: 680px) {
+    #phones {
+        width: 100%;
+        height: 100%;
+    }
+}

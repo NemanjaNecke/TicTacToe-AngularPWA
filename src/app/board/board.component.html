@@ -1,0 +1,40 @@
+<mat-toolbar class="controls" color="primary">
+  <mat-toolbar-row>
+    <h1>Current Player: {{ player }}</h1>
+    <mat-form-field appearance="fill" *ngIf="innerWidth > 680">
+      <mat-label>Enter Player Name:</mat-label>
+      <input
+        type="text"
+        #input
+        matInput
+        (keyup.enter)="playerNames(input.value)"
+      />
+    </mat-form-field>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+   <span *ngIf="innerWidth > 680">{{ players[0] }} vs. {{ players[1] }}</span> 
+    <button mat-raised-button color="accent" (click)="newGame()">
+      Start new Game
+    </button>
+    <h2 *ngIf="winner">
+      Player {{ winner }} <span *ngIf="winner == 'X'">{{ players[0] }}</span>
+      <span *ngIf="winner == 'O'">{{ players[1] }}</span> won the game!
+    </h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-grid-list id="phones" class="board" cols="3" rowHeight="150px">
+  <mat-grid-tile
+    *ngFor="let val of squares; let i = index"
+    [colspan]="1"
+    [rowspan]="1"
+  >
+    <app-square
+      [status]="status"
+      [value]="val"
+      (click)="makeMove(i)"
+      (click)="clickEvent()"
+    >
+    </app-square>
+  </mat-grid-tile>
+</mat-grid-list>

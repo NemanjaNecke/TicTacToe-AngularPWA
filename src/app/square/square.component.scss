@@ -1,0 +1,16 @@
+button {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2,113,97,1) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
+   
+}
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    font-size: 7rem;
+    color: white;
+} 
+.success {
+    background: rgb(2,113,97);
+}
+.danger {
+    background: #090979;
+}

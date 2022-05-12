@@ -1,0 +1,5 @@
+<button  mat-button *ngIf="!value">{{ value }}</button>
+<button  mat-button *ngIf="value == 'X'"  
+[ngClass]="status ? 'success' : 'success'">{{ value }}</button>
+<button  mat-button *ngIf="value == 'O'"
+[ngClass]="status ? 'danger' : 'danger'">{{ value }}</button>
